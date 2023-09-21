@@ -1,73 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Time Vehicle Tracking System</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-    <style>
-        #map{
-            position : fixed;
-            top : 0;
-            left : 0;
-            width : 100%;
-            height : 100%;
-            z-index: -1;
-        }
-        html, body{
-            margin : 0;
-            padding : 0;
-            overflow: hidden;
-        }
-    </style>
-    <script>
-        let map;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #F1F3F8;
+    background-color: #2E2B2B;
+}
 
-        function initMap(){
-            const mapOptions = {
-                center: { lat: 40.7128, lng: -74.0060 },
-                zoom: 10,
-                disableDefaultUI: true,
-                styles: [
-                    {
-                        elementType: "geometry",
-                        stylers: [{ color: "#242f3e" }],
-                    },
-                    {
-                        elementType: "labels.text.stroke",
-                        stylers: [{ color: "#242f3e" }],
-                    },
-                    {
-                        elementType: "labels.text.fill",
-                        stylers: [{ color: "#746855" }],
-                    },
-                    {
-                        featureType: "road",
-                        elementType: "geometry",
-                        stylers: [{ color: "#ffcc00" }],
-                    },
-                ]
-            }
-        }
-    </script>
-</head>
-<body>
-    <div id="map-container" class="container">
-        <div class="search-bar">
-            <input class="input" type="text" placeholder="Search...">
-            <div class="bus-icon">
-                <img src="bus-icon.png" alt="Bus Icon">
-            </div>
-            <div class="line-under-search-bar"></div>
-        </div>
-        <div class="options">
-            <div class="option">Home</div>
-            <div class="option">Chadwick Falls</div>
-            <div class="option">Manali</div>
-            <div class="option">South Himachal</div>
-        </div>
-    </div>
-</body>
-</html>
+.container {
+    width: 430px;
+    height: 300px;
+    position: absolute;
+    top: 23px;
+    left: 31px;
+    border-radius: 20px;
+    border: 1px solid #2E2B2B;
+    background: linear-gradient(0deg, #2E2B2B, #2E2B2B),
+                linear-gradient(0deg, #F1F3F8, #F1F3F8);
+}
+
+.search-bar {
+    margin: 20px;
+    padding: 10px;
+    height: 35px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 5px;
+}
+
+.line-under-search-bar {
+    border-bottom: 1px solid #2E2B2B;
+    margin-top: 5px;
+}
+
+.options {
+    margin: 20px;
+    display: none;
+    align-content: center;
+}
+
+.option {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.option:hover {
+    background-color: #F1F3F8;
+}
+
+.search-bar:focus-within + .options{
+    display: block;
+}
+
+.bus-icon{
+    position: relative;
+    width: 38px;
+    height: 25px;
+
+    top: 5px;
+    left: 85%;
+    transform: translateY(-110%);
+}
+
+.bus-icon img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    
+}
+
+.options .option img{
+    padding-right: 10px;
+    height: 17px;
+}
