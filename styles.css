@@ -41,7 +41,7 @@ body {
 
 .options {
     margin: 20px;
-    display: block;
+    display: none;
     align-items: center;
 }
 
