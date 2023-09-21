@@ -41,7 +41,8 @@ body {
 
 .options {
     margin: 20px;
-    display: none;
+    display: block;
+    align-items: center;
 }
 
 .option {
@@ -77,3 +78,9 @@ body {
     
 }
 
+.options .option img{
+    position: relative;
+    padding-right: 15px;
+    height: 18px;
+    top: 2px;
+}
